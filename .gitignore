@@ -9,3 +9,10 @@ README.txt
 .classpath
 .settings
 .gradle
+.gradle/1.12/taskArtifacts/cache.properties.lock
+*.lock
+.gradle/1.12/taskArtifacts/fileHashes.bin
+.gradle/1.12/taskArtifacts/fileSnapshots.bin
+.gradle/1.12/taskArtifacts/outputFileStates.bin
+.gradle/1.12/taskArtifacts/taskArtifacts.bin
+.gradle/gradle.log
