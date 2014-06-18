@@ -19,7 +19,8 @@ apply plugin: 'forge'
 
 version = "0.0"
 
-def ENV = System.getenv() if (ENV.DRONE_BUILD_NUMBER) {
+def ENV = System.getenv()
+if (ENV.DRONE_BUILD_NUMBER) {
 	version += "." + ENV.DRONE_BUILD_NUMBER
 } else {
 	version += ".local"
