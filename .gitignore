@@ -16,3 +16,11 @@ README.txt
 .gradle/1.12/taskArtifacts/outputFileStates.bin
 .gradle/1.12/taskArtifacts/taskArtifacts.bin
 .gradle/gradle.log
+forge-1.7.2-10.12.2.1126-src.zip
+*.class
+bin/mcmod.info
+.project.bak
+.classpath.bak
+*.lock
+.gradle/1.12/taskArtifacts/cache.properties.lock
+.gradle/1.12/taskArtifacts/fileHashes.bin
