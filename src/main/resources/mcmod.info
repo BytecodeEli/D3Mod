@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "d3mod",
+  "name": "D3Mod",
+  "description": "I does nothing :-) ",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["D3add3d"],
+  "credits": "welfare93, dwi and MrNumerios for helping me out; Johnny_Nuclear for his time",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
