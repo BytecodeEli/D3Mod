@@ -17,9 +17,16 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.0.System.getenv('DRONE_BUILD_NUMBER')"
-group= "net.d3add3d.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
+version = "0.0"
+
+def ENV = System.getenv() if (ENV.DRONE_BUILD_NUMBER) {
+	version += "." + ENV.DRONE_BUILD_NUMBER
+} else {
+	version += ".local"
+}
+
+group= "net.d3add3d.d3mod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "D3Mod"
 
 minecraft {
     version = "1.7.2-10.12.2.1126"
