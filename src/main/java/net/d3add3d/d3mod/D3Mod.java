@@ -5,15 +5,29 @@ import net.minecraft.init.Blocks;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = Reference.MODID, version = Reference.VERSION)
 public class D3Mod
 {
+	
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent event)
+    {
+    	System.out.println("*********D3MOD PREINITIALIZING*********");
+    }
     
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-		// some example code
-        System.out.println("'This is me testing CI and Minecraft 1.7.2 :)' - D3add3d");
+        System.out.println("*********D3MOD INITIALIZING*********");
     }
+    
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event)
+    {
+    	System.out.println("*********D3MOD POSTINITIALIZING*********");
+    }
+    
 }
