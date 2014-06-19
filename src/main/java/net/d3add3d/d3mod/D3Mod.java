@@ -12,22 +12,27 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.event.*;
+import cpw.mods.fml.common.FMLLog;
+import org.apache.logging.log4jLogger;
 
 @Mod(modid = Reference.MODID, version = Reference.VERSION)
 public class D3Mod
 {
-	
+
+    private static final Logger logger = FMLLog.getLogger();
+
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
     	System.out.println("*********D3MOD PREINITIALIZING*********");
-    	
+        logger.info("*********D3MOD PREINITIALIZING*********");
     }
     
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
         System.out.println("*********D3MOD INITIALIZING*********");
+        logger.info("I like using asterisks :)");
     }
     
     @EventHandler
