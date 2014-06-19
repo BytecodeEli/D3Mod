@@ -13,7 +13,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.event.*;
 import cpw.mods.fml.common.FMLLog;
-import org.apache.logging.log4jLogger;
+import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Reference.MODID, version = Reference.VERSION)
 public class D3Mod
@@ -43,3 +43,4 @@ public class D3Mod
     }
     
 }
+u
