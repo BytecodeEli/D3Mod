@@ -43,4 +43,3 @@ public class D3Mod
     }
     
 }
-u
