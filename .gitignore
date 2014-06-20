@@ -24,3 +24,4 @@ bin/mcmod.info
 *.lock
 .gradle/1.12/taskArtifacts/cache.properties.lock
 .gradle/1.12/taskArtifacts/fileHashes.bin
+bin
