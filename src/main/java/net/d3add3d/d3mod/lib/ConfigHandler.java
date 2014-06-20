@@ -11,5 +11,7 @@ public class ConfigHandler {
 		config.load();
 		
 		Reference.PASSWORD_CONFIG = config.get("Authentication", "Pack Password", "null", "Do not touch unless you know what you are doing!").getString();
+		
+		config.save();
 	}
 }

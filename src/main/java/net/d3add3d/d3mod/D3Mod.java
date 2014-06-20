@@ -7,10 +7,12 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -23,15 +25,19 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class D3Mod
 {
 
-    private final Logger logger = LogManager.getFormatterLogger(Reference.MODID);
+    final static Logger logger = LogManager.getFormatterLogger(Reference.MODID);
     public static Block unknownOne, unknownTwo;
+    D3EventHandler events = new D3EventHandler();
 
-    @EventHandler
+    @EventHandler 
     public void preInit(FMLPreInitializationEvent event)
     {
     	//System.out.println("*********D3MOD PREINITIALIZING*********");
         logger.info("*********D3MOD PREINITIALIZING*********");
         ConfigHandler.init(event.getSuggestedConfigurationFile());
+        MinecraftForge.EVENT_BUS.register(events);
+        FMLCommonHandler.instance().bus().register(events);
+        logger.info("Password is: " + Reference.PASSWORD + " and config says: " + Reference.PASSWORD_CONFIG);
     }
     
     @EventHandler
@@ -40,8 +46,8 @@ public class D3Mod
         //System.out.println("*********D3MOD INITIALIZING*********");
     	logger.info("*********D3MOD INITIALIZING*********");
         logger.warn("I like using asterisks :)");
-        unknownOne = new D3Block(Material.iron).setBlockName("unknownOne").setCreativeTab(CreativeTabs.tabDecorations);
-        unknownTwo = new D3Block(Material.iron).setBlockName("unknownTwo").setCreativeTab(CreativeTabs.tabDecorations);
+        unknownOne = new D3BlockRotated(Material.iron).setBlockName("unknownOne").setCreativeTab(CreativeTabs.tabDecorations);
+        unknownTwo = new D3BlockRotated(Material.iron).setBlockName("unknownTwo").setCreativeTab(CreativeTabs.tabDecorations);
         logger.warn("DEBUG: " + unknownOne.getUnlocalizedName() + ", " + unknownTwo.getUnlocalizedName());
     }
     
