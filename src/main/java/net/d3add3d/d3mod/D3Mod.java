@@ -1,5 +1,6 @@
 package net.d3add3d.d3mod;
 
+import net.d3add3d.d3mod.lib.ConfigHandler;
 import net.d3add3d.d3mod.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -30,6 +31,7 @@ public class D3Mod
     {
     	//System.out.println("*********D3MOD PREINITIALIZING*********");
         logger.info("*********D3MOD PREINITIALIZING*********");
+        ConfigHandler.init(event.getSuggestedConfigurationFile());
     }
     
     @EventHandler
@@ -49,8 +51,8 @@ public class D3Mod
     	//System.out.println("*********D3MOD POSTINITIALIZING*********");
     	logger.info("*********D3MOD POSTINITIALIZING*********");
     	logger.info("Adding RottenFlesh to Leather smelting.");
-    	GameRegistry.registerBlock(unknownOne, "Unknown sign left side");
-    	GameRegistry.registerBlock(unknownTwo, "Unknown sign right side");
+    	GameRegistry.registerBlock(unknownOne, unknownOne.getUnlocalizedName().substring(5));
+    	GameRegistry.registerBlock(unknownTwo, unknownTwo.getUnlocalizedName().substring(5));
     	GameRegistry.addSmelting(Items.rotten_flesh, new ItemStack(Items.leather), 1.0F);
     }
     
