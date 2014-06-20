@@ -6,4 +6,4 @@ To compile just type "gradlew clean build" result of compilation is in build/lib
 License
 =====
 
-This mod is licensed under MMPL-1.0(modified), see LICENSE file
+This mod is licensed under MMPL-1.0.1(modified), see LICENSE file
