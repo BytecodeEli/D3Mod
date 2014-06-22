@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 
@@ -27,6 +28,7 @@ public class D3Mod
 
     final static Logger logger = LogManager.getFormatterLogger(Reference.MODID);
     public static Block unknownOne, unknownTwo;
+    public static Item blackPowder;
     D3EventHandler events = new D3EventHandler();
 
     @EventHandler 
@@ -48,7 +50,8 @@ public class D3Mod
         logger.warn("I like using asterisks :)");
         unknownOne = new D3BlockRotated(Material.iron).setBlockName("unknownOne").setCreativeTab(CreativeTabs.tabDecorations);
         unknownTwo = new D3BlockRotated(Material.iron).setBlockName("unknownTwo").setCreativeTab(CreativeTabs.tabDecorations);
-        logger.warn("DEBUG: " + unknownOne.getUnlocalizedName() + ", " + unknownTwo.getUnlocalizedName());
+        blackPowder = new D3Item().setUnlocalizedName("blackPowder").setCreativeTab(CreativeTabs.tabDecorations);
+        //logger.warn("DEBUG: " + unknownOne.getUnlocalizedName() + ", " + unknownTwo.getUnlocalizedName());
     }
     
     @EventHandler
@@ -60,6 +63,11 @@ public class D3Mod
     	GameRegistry.registerBlock(unknownOne, unknownOne.getUnlocalizedName().substring(5));
     	GameRegistry.registerBlock(unknownTwo, unknownTwo.getUnlocalizedName().substring(5));
     	GameRegistry.addSmelting(Items.rotten_flesh, new ItemStack(Items.leather), 1.0F);
+    	
+    	ItemStack vanillaCoal = new ItemStack(Items.coal);
+    	ItemStack vanillaChar = new ItemStack(Items.)
+    	
+    	GameRegistry.addShapelessRecipe();
     }
     
 }
