@@ -2,14 +2,13 @@
 {
   "modid": "D3Mod",
   "name": "D3Mod",
-  "description": "I does nothing :-) ",
+  "description": "It does nothing :-) ",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
   "authorList": ["D3add3d"],
-  "credits": "welfare93, dwi and MrNumerios for helping me out
-TwoThe - BlockSide helper/utility",
+  "credits": "welfare93, dwi and MrNumerios for helping me out",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
