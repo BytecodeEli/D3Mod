@@ -4,6 +4,7 @@ import net.d3add3d.d3mod.lib.Reference;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
@@ -19,9 +20,11 @@ public class D3BlockRotated extends BlockDirectional {
 	@SideOnly(Side.CLIENT)
 	private IIcon field_149984_b;
 	
-	public D3BlockRotated(Material par1Material)
+	public D3BlockRotated(Material par1Material, String par2Name)
 	{
 	super(par1Material);
+	this.setCreativeTab(CreativeTabs.tabDecorations);
+	this.setBlockName(par2Name);
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -49,8 +52,8 @@ public class D3BlockRotated extends BlockDirectional {
 	@Override
     public void registerBlockIcons(IIconRegister par1IIconRegister)
     {
-        this.field_149986_M = par1IIconRegister.registerIcon(Reference.MODID.toLowerCase() + ":" + this.getUnlocalizedName() + "_face");
-        this.field_149984_b = par1IIconRegister.registerIcon(Reference.MODID.toLowerCase() + ":" + this.getUnlocalizedName() + "_top");
-        this.blockIcon = par1IIconRegister.registerIcon(Reference.MODID.toLowerCase() + ":" + this.getUnlocalizedName() + "_side");
+        this.field_149986_M = par1IIconRegister.registerIcon(Reference.MODID.toLowerCase() + ":" + this.getUnlocalizedName().substring(5) + "_face");
+        this.field_149984_b = par1IIconRegister.registerIcon(Reference.MODID.toLowerCase() + ":" + this.getUnlocalizedName().substring(5) + "_top");
+        this.blockIcon = par1IIconRegister.registerIcon(Reference.MODID.toLowerCase() + ":" + this.getUnlocalizedName().substring(5) + "_side");
     }
 }
