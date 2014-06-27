@@ -22,10 +22,12 @@ version = "0.0.1"
 def ENV = System.getenv()
 if (ENV.DRONE_BUILD_NUMBER) {
 	version += "." + ENV.DRONE_BUILD_NUMBER
-} elseif (ENV.TRAVIS_JOB_NUMBER) {
-	version += "." + ENV.TRAVIS_JOB_NUMBER
 } else {
-	version += ".local"
+	if (ENV.TRAVIS_JOB_NUMBER) {
+		version += "." + ENV.TRAVIS_JOB_NUMBER
+	} else {
+		version += ".local"
+	}
 }
 
 group= "net.d3add3d.d3mod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
