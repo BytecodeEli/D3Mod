@@ -1,10 +1,15 @@
 language: java
 jdk:
- - oraclejdk7
- - openjdk7
- - openjdk6
+- oraclejdk7
+- openjdk7
+- openjdk6
+env:
+  global:
+  - FTP_USER=travis
+  - secure: hLhM9Cdjeqz1AFJN2xtP72l6hgNb54u1Al/QHX/sARWqG4HCS0aA4m5rnZ8GEriHsuMCEOBpF65G9NL6muBy5UfLUAwiVuHfU1CVRUAj52aKYSCn6vZS9GTtMzT5xpYE/Nwk4EFU+qMQeAW5iwU3kwZRIUKuij3u1Un1TwbCI2o=
 before_install:
- - chmod +x gradlew
+- chmod +x gradlew
 install:
- - true
-script: "bash gradlew clean build"
+- true
+script: bash gradlew clean build
+after_success: "curl --ftp-create-dirs -T build/libs/D3Mod-0.0.1.$TRAVIS_JOB_NUMBER.jar -u $FTP_USER:$FTP_PASSWORD ftp://direct.d3add3d.net/var/dl1/D3Mod-0.0.1.$TRAVIS_JOB_NUMBER.jar"
