@@ -20,6 +20,7 @@ import org.apache.logging.log4j.Logger;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -28,7 +29,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @Mod(modid = Reference.MODID, version = Reference.VERSION)
 public class D3Mod
 {
-
+	
+	@Instance(Reference.MODID)
+	public static D3Mod instance;
+	
     final static Logger logger = LogManager.getFormatterLogger(Reference.MODID);
     public static Block unknownOne, unknownTwo;
     public static Item blackPowder, fakeEmerald;
