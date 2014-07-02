@@ -90,7 +90,9 @@ public class D3Mod
     	GameRegistry.addShapelessRecipe(new ItemStack(blackPowder), vanillaItemCoal, vanillaCobble);
     	GameRegistry.addShapelessRecipe(new ItemStack(blackPowder), vanillaItemChar, vanillaCobble);
     	GameRegistry.addShapelessRecipe(new ItemStack(fakeEmerald), vanillaItemDia, vanillaDyeLime, vanillaItemGold, vanillaDyeLime, vanillaItemDia, vanillaItemGold);
-    	GameRegistry.addShapelessRecipe(new ItemStack(Items.emerald, 2), vanillaItemEmerald, vanillaDyeLime, vanillaItemDia);
+    	GameRegistry.addShapelessRecipe(new ItemStack(Items.emerald, 2), vanillaItemEmerald, vanillaDyeLime, vanillaItemDia, vanillaItemGold);
+    	
+    	GameRegistry.addSmelting(fakeEmerald, vanillaItemEmerald, 0.1F);
     }
     
 }
