@@ -1,11 +1,14 @@
 package net.d3add3d.d3mod;
 
+import java.util.List;
+
 import net.d3add3d.d3mod.lib.Reference;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
@@ -39,7 +42,7 @@ public class D3BlockRotated extends BlockDirectional {
     {
         int l = MathHelper.floor_double((double)(entity.rotationYaw * 4.0F / 360.0F) + 2.5D) & 3;
         world.setBlockMetadataWithNotify(x, y, z, l, 2);
-    }	
+    }
 	
 	/*
 	@SideOnly(Side.CLIENT)
@@ -56,4 +59,5 @@ public class D3BlockRotated extends BlockDirectional {
         this.field_149984_b = par1IIconRegister.registerIcon(Reference.MODID.toLowerCase() + ":" + this.getUnlocalizedName().substring(5) + "_top");
         this.blockIcon = par1IIconRegister.registerIcon(Reference.MODID.toLowerCase() + ":" + this.getUnlocalizedName().substring(5) + "_side");
     }
+	
 }

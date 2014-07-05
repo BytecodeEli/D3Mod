@@ -15,4 +15,9 @@ public class D3EventHandler {
 			event.player.addChatMessage(new ChatComponentText("This is official KingForge pack, enjoy!"));
 		}
 	}
+	@SubscribeEvent
+	public void hello(PlayerEvent.ItemCraftedEvent event)
+	{
+		if(event.crafting.getUnlocalizedName() == "item.fakeEmerald") event.player.addChatMessage(new ChatComponentText("Gratz! You just crafted useless item."));
+	}
 }

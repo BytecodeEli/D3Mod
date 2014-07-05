@@ -24,3 +24,8 @@ bin
 .gradle/1.12/taskArtifacts/fileSnapshots.bin
 .gradle/1.12/taskArtifacts/fileHashes.bin
 .gradle/1.12/taskArtifacts/cache.properties.lock
+srcbackup
+*.lock
+.gradle/1.12/taskArtifacts/cache.properties.lock
+.gradle/1.12/taskArtifacts/taskArtifacts.bin
+.gradle/gradle.log

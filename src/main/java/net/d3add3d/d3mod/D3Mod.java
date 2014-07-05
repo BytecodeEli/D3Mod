@@ -37,11 +37,25 @@ public class D3Mod
     public static Block unknownOne, unknownTwo;
     public static Item blackPowder, fakeEmerald;
     D3EventHandler events = new D3EventHandler();
+    public static double JAVA_VERSION = getVersion ();
+
+    static double getVersion () {
+        String version = System.getProperty("java.version");
+        int pos = 0, count = 0;
+        for ( ; pos<version.length() && count < 2; pos ++) {
+            if (version.charAt(pos) == '.') count ++;
+        }
+        return Double.parseDouble (version.substring (0, pos));
+    }
 
     @EventHandler 
     public void preInit(FMLPreInitializationEvent event)
     {
         logger.info("*********D3MOD PREINITIALIZING*********");
+        if (JAVA_VERSION <= 1.6)
+        {
+        logger.warn("THIS MOD REQUIRES JAVA 1.7 AND UP TO RUN WITHOUT CRASHING!");
+        }
         ConfigHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(events);
         FMLCommonHandler.instance().bus().register(events);
@@ -68,9 +82,10 @@ public class D3Mod
     	logger.info("Adding fake emerald recipe.");
     	logger.info("Adding emerald cloning recipe");
     	logger.info("Removing OPedness...");
+    	logger.info("Kappa...");
     	if (Reference.DEBUG == 1) logger.info(Arrays.toString(OreDictionary.getOreNames()));
-    	GameRegistry.registerBlock(unknownOne, unknownOne.getUnlocalizedName().substring(5));
-    	GameRegistry.registerBlock(unknownTwo, unknownTwo.getUnlocalizedName().substring(5));
+    	GameRegistry.registerBlock(unknownOne, ItemD3Block.class,unknownOne.getUnlocalizedName().substring(5));
+    	GameRegistry.registerBlock(unknownTwo, ItemD3Block.class,unknownTwo.getUnlocalizedName().substring(5));
     	GameRegistry.registerItem(blackPowder, blackPowder.getUnlocalizedName().substring(5), Reference.MODID);
     	GameRegistry.registerItem(fakeEmerald, fakeEmerald.getUnlocalizedName().substring(5), Reference.MODID);
     	OreDictionary.registerOre("dyeBlack", blackPowder);
