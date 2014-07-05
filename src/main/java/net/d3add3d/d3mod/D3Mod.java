@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import net.d3add3d.d3mod.lib.ConfigHandler;
 import net.d3add3d.d3mod.lib.Reference;
+import net.d3add3d.d3mod.lib.D3ModException;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -55,6 +56,7 @@ public class D3Mod
         if (JAVA_VERSION <= 1.6)
         {
         logger.warn("THIS MOD REQUIRES JAVA 1.7 AND UP TO RUN WITHOUT CRASHING!");
+	throw D3ModException("Java 1.7 and up is required!");
         }
         ConfigHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(events);
