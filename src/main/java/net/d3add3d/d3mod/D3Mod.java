@@ -56,7 +56,7 @@ public class D3Mod
         if (JAVA_VERSION <= 1.6)
         {
         logger.warn("THIS MOD REQUIRES JAVA 1.7 AND UP TO RUN WITHOUT CRASHING!");
-	throw D3ModException("Java 1.7 and up is required!");
+	throw new D3ModException("Java 1.7 and up is required!");
         }
         ConfigHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(events);
