@@ -12,6 +12,8 @@ Travis CI [![Build Status](https://travis-ci.org/D3add3d/D3Mod.svg?branch=master
 *Versioning is: major.minor.version.build.worker
 Worker 1 - Oracle JDK 7, 2 - OpenJDK 7, 3 - OpenJDK 6
 
+Version 0.0.2 and up only compiles using workers 1 and 2!(dropping Java 1.6 sopport)
+
 
 License
 =====

@@ -50,7 +50,7 @@ public class D3Mod
     }
 
     @EventHandler 
-    public void preInit(FMLPreInitializationEvent event)
+    public void preInit(FMLPreInitializationEvent event) throws D3ModException
     {
         logger.info("*********D3MOD PREINITIALIZING*********");
         if (JAVA_VERSION <= 1.6)
