@@ -10,6 +10,7 @@ public class D3EventHandler {
 	@SubscribeEvent
 	public void welcome(PlayerEvent.PlayerLoggedInEvent event)
 	{
+		event.player.addChatMessage(new ChatComponentText("In memory of great companion and best cat in the world Columbus."));
 		if(Reference.PASSWORD_CONFIG.equals(Reference.PASSWORD))
 		{
 			event.player.addChatMessage(new ChatComponentText("This is official KingForge pack, enjoy!"));

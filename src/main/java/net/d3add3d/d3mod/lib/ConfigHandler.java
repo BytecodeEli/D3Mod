@@ -12,6 +12,7 @@ public class ConfigHandler {
 		
 		Reference.PASSWORD_CONFIG = config.get("Authentication", "Pack Password", "null", "Do not touch unless you know what you are doing!").getString();
 		Reference.DEBUG = config.get("Debug", "Debug mode", 0, "Only for testing pruposes ;)").getInt();
+		Reference.HONORTHECAT = config.get("Misc", "Honor Columbus(my cat)", 1).getInt();
 		
 		config.save();
 	}

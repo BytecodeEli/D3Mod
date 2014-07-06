@@ -12,6 +12,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -36,11 +37,12 @@ public class D3Mod
 	
     final static Logger logger = LogManager.getFormatterLogger(Reference.MODID);
     public static Block unknownOne, unknownTwo;
-    public static Item blackPowder, fakeEmerald;
+    public static Item blackPowder, fakeEmerald, nail, nailReinforced, nailUnbreakable;
     D3EventHandler events = new D3EventHandler();
-    public static double JAVA_VERSION = getVersion ();
+    /*
+    public static double JAVA_VERSION = getVersion();
 
-    static double getVersion () {
+    static double getVersion() {
         String version = System.getProperty("java.version");
         int pos = 0, count = 0;
         for ( ; pos<version.length() && count < 2; pos ++) {
@@ -48,16 +50,18 @@ public class D3Mod
         }
         return Double.parseDouble (version.substring (0, pos));
     }
+    */
 
     @EventHandler 
     public void preInit(FMLPreInitializationEvent event) throws D3ModException
     {
         logger.info("*********D3MOD PREINITIALIZING*********");
-        if (JAVA_VERSION <= 1.6)
+        /*if (JAVA_VERSION <= 1.6)
         {
         logger.warn("THIS MOD REQUIRES JAVA 1.7 AND UP TO RUN WITHOUT CRASHING!");
-	throw new D3ModException("Java 1.7 and up is required!");
+		throw new D3ModException("Java 1.7 and up is required!");
         }
+        */
         ConfigHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(events);
         FMLCommonHandler.instance().bus().register(events);
@@ -73,6 +77,9 @@ public class D3Mod
         unknownTwo = new D3BlockRotated(Material.iron, "unknownTwo");
         blackPowder = new D3Item("blackPowder");
         fakeEmerald = new D3Item("fakeEmerald");
+        nail = new D3Weapon("nail", 250, false);
+        nailReinforced = new D3Weapon("nailReinforced", 1651, false);
+        nailUnbreakable = new D3Weapon("nailUnbreakable", 0, true);
     }
     
     @EventHandler
@@ -85,11 +92,20 @@ public class D3Mod
     	logger.info("Adding emerald cloning recipe");
     	logger.info("Removing OPedness...");
     	logger.info("Kappa...");
-    	if (Reference.DEBUG == 1) logger.info(Arrays.toString(OreDictionary.getOreNames()));
+    	if (Reference.DEBUG == 1) {
+    		logger.info(Arrays.toString(OreDictionary.getOreNames()));
+    		logger.info("Stone: " + ToolMaterial.STONE.getDamageVsEntity() + " ; Iron: " + ToolMaterial.IRON.getDamageVsEntity() + " ; Gem: " + ToolMaterial.EMERALD.getDamageVsEntity());
+    	}
+    	if (Reference.HONORTHECAT == 1) {
+    		System.out.println("Meow?");
+    	}
     	GameRegistry.registerBlock(unknownOne, ItemD3Block.class,unknownOne.getUnlocalizedName().substring(5));
     	GameRegistry.registerBlock(unknownTwo, ItemD3Block.class,unknownTwo.getUnlocalizedName().substring(5));
     	GameRegistry.registerItem(blackPowder, blackPowder.getUnlocalizedName().substring(5), Reference.MODID);
     	GameRegistry.registerItem(fakeEmerald, fakeEmerald.getUnlocalizedName().substring(5), Reference.MODID);
+    	GameRegistry.registerItem(nail, nail.getUnlocalizedName().substring(5), Reference.MODID);
+    	GameRegistry.registerItem(nailReinforced, nailReinforced.getUnlocalizedName().substring(5), Reference.MODID);
+    	GameRegistry.registerItem(nailUnbreakable, nailUnbreakable.getUnlocalizedName().substring(5), Reference.MODID);
     	OreDictionary.registerOre("dyeBlack", blackPowder);
     	OreDictionary.registerOre("gemEmerald", fakeEmerald);
     	
