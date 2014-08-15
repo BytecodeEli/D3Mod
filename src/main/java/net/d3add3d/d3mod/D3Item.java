@@ -25,7 +25,7 @@ public class D3Item extends Item {
 		switch (this.getUnlocalizedName().substring(5))
 		{
 		case "blackPowder": par3List.add("Can be used as dye."); break;
-		case "fakeEmerald": par3List.add("Useless, may get removed."); break;
+		//case "fakeEmerald": par3List.add("Useless, may get removed."); break;
 		}
 	}
 }

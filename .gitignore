@@ -29,3 +29,5 @@ srcbackup
 .gradle/1.12/taskArtifacts/cache.properties.lock
 .gradle/1.12/taskArtifacts/taskArtifacts.bin
 .gradle/gradle.log
+*.lock
+*.bin

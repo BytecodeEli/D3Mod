@@ -39,29 +39,11 @@ public class D3Mod
     public static Block unknownOne, unknownTwo;
     public static Item blackPowder, fakeEmerald, nail, nailReinforced, nailUnbreakable;
     D3EventHandler events = new D3EventHandler();
-    /*
-    public static double JAVA_VERSION = getVersion();
-
-    static double getVersion() {
-        String version = System.getProperty("java.version");
-        int pos = 0, count = 0;
-        for ( ; pos<version.length() && count < 2; pos ++) {
-            if (version.charAt(pos) == '.') count ++;
-        }
-        return Double.parseDouble (version.substring (0, pos));
-    }
-    */
 
     @EventHandler 
     public void preInit(FMLPreInitializationEvent event) throws D3ModException
     {
         logger.info("*********D3MOD PREINITIALIZING*********");
-        /*if (JAVA_VERSION <= 1.6)
-        {
-        logger.warn("THIS MOD REQUIRES JAVA 1.7 AND UP TO RUN WITHOUT CRASHING!");
-		throw new D3ModException("Java 1.7 and up is required!");
-        }
-        */
         ConfigHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(events);
         FMLCommonHandler.instance().bus().register(events);
@@ -77,9 +59,9 @@ public class D3Mod
         unknownTwo = new D3BlockRotated(Material.iron, "unknownTwo");
         blackPowder = new D3Item("blackPowder");
         fakeEmerald = new D3Item("fakeEmerald");
-        nail = new D3Weapon("nail", 250, false);
-        nailReinforced = new D3Weapon("nailReinforced", 1651, false);
-        nailUnbreakable = new D3Weapon("nailUnbreakable", 0, true);
+        //nail = new D3Weapon("nail", 250, false);
+        //nailReinforced = new D3Weapon("nailReinforced", 1651, false);
+        //nailUnbreakable = new D3Weapon("nailUnbreakable", 0, true);
     }
     
     @EventHandler
@@ -102,10 +84,10 @@ public class D3Mod
     	GameRegistry.registerBlock(unknownOne, ItemD3Block.class,unknownOne.getUnlocalizedName().substring(5));
     	GameRegistry.registerBlock(unknownTwo, ItemD3Block.class,unknownTwo.getUnlocalizedName().substring(5));
     	GameRegistry.registerItem(blackPowder, blackPowder.getUnlocalizedName().substring(5), Reference.MODID);
-    	GameRegistry.registerItem(fakeEmerald, fakeEmerald.getUnlocalizedName().substring(5), Reference.MODID);
-    	GameRegistry.registerItem(nail, nail.getUnlocalizedName().substring(5), Reference.MODID);
-    	GameRegistry.registerItem(nailReinforced, nailReinforced.getUnlocalizedName().substring(5), Reference.MODID);
-    	GameRegistry.registerItem(nailUnbreakable, nailUnbreakable.getUnlocalizedName().substring(5), Reference.MODID);
+    	//GameRegistry.registerItem(fakeEmerald, fakeEmerald.getUnlocalizedName().substring(5), Reference.MODID);
+    	//GameRegistry.registerItem(nail, nail.getUnlocalizedName().substring(5), Reference.MODID);
+    	//GameRegistry.registerItem(nailReinforced, nailReinforced.getUnlocalizedName().substring(5), Reference.MODID);
+    	///GameRegistry.registerItem(nailUnbreakable, nailUnbreakable.getUnlocalizedName().substring(5), Reference.MODID);
     	OreDictionary.registerOre("dyeBlack", blackPowder);
     	OreDictionary.registerOre("gemEmerald", fakeEmerald);
     	

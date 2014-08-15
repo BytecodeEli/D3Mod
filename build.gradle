@@ -36,7 +36,7 @@ group= "net.d3add3d.d3mod" // http://maven.apache.org/guides/mini/guide-naming-c
 archivesBaseName = "D3Mod"
 
 minecraft {
-    version = "1.7.2-10.12.2.1126"
+    version = "1.7.10-10.13.0.1206"
     assetDir = "eclipse/assets"
 }
 

@@ -11,4 +11,4 @@ before_install:
 install:
 - true
 script: bash gradlew clean build
-after_success: "curl --ftp-create-dirs -T build/libs/D3Mod-0.0.2.$TRAVIS_JOB_NUMBER.jar -u $FTP_USER:$FTP_PASSWORD ftp://direct.d3add3d.net/../../var/dl1/0.0.2/D3Mod-0.0.2.$TRAVIS_JOB_NUMBER.jar"
+after_success: "curl --ftp-create-dirs -T build/libs/D3Mod-0.1.0.$TRAVIS_JOB_NUMBER.jar -u $FTP_USER:$FTP_PASSWORD ftp://direct.d3add3d.net/../../var/dl1/0.1.0/D3Mod-0.1.0.$TRAVIS_JOB_NUMBER.jar"
